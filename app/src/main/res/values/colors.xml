@@ -1,0 +1,20 @@
+<resources>
+    <color name="ColorPrimary">#00664C</color>
+    <color name="ColorPrimaryDark">#00695C</color>
+    <color name="ColorAlternateList1">#f8f8f8</color>
+    <color name="ColorAlternateList2">#ffffff</color>
+    <color name="ColorAlternateList22">#0A00695C</color>
+    <color name="ColorAlternateList11">#1623a602</color>
+    <color name="ColorAlternateList111">#1600664C</color>
+    <color name="ColorIndicator">#FFFFFF</color>
+    <color name="tabsScrollColor">#99FFFFFF</color>
+    <color name="dark_red">#a30d02</color>
+    <color name="expl_header_title">#0066ff</color>
+    <!-- ListView Selection Color-->
+    <color name="lightgray">#ececec</color>
+    <color name="chapter_header_bg">#e1e1e1</color>
+    <color name="pressed_color">#FF9191</color>
+    <color name="default_color">#ffffff</color>
+    <color name="white">#f6f6f6</color>
+    <color name="ListItemHighlightColor">#02B084</color>
+</resources>

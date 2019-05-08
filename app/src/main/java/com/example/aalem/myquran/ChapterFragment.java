@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.aalem.myquran.helpers.DBHelper;
 import com.example.aalem.myquran.model.ChapterModel;
 import com.example.aalem.myquran.model.DatabaseHelper;
 
@@ -31,7 +32,7 @@ public class ChapterFragment extends Fragment {
     MyAdapter adapter;
     Typeface font;
     Context myContext;
-    DatabaseHelper db;
+    DBHelper db;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -41,15 +42,16 @@ public class ChapterFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
 
-        db = new DatabaseHelper(getActivity());
-        try {
-            db.createDatabase();
-        } catch (IOException e) {
-            Toast.makeText(myContext, "Error Creating Database", Toast.LENGTH_LONG)
-                    .show();
-        }
-        chapters = db.getChapter();
+//        db = new DBHelper(getActivity());
+//        try {
+//            db.updateDataBase();
+//        } catch (IOException e) {
+//            Toast.makeText(myContext, "Error Creating Database", Toast.LENGTH_LONG)
+//                    .show();
+//        }
+//        chapters = db.getChapter();
 
+        chapters = ((MyApplication) getActivity().getApplication()).dbHelper.getChapter();
 
         adapter = new MyAdapter(chapters, getActivity());
         recyclerView.setAdapter(adapter);

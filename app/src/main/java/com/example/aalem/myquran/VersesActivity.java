@@ -35,14 +35,16 @@ public class VersesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verses);
 
-        DatabaseHelper db = new DatabaseHelper(this);
-        try {
-            db.createDatabase();
-        } catch (IOException e) {
-            Toast.makeText(this, "Error Creating Database", Toast.LENGTH_LONG)
-                    .show();
-        }
-        verses = db.getVerses(getIntent().getStringExtra("condition"));
+//        DatabaseHelper db = new DatabaseHelper(this);
+//        try {
+//            db.createDatabase();
+//        } catch (IOException e) {
+//            Toast.makeText(this, "Error Creating Database", Toast.LENGTH_LONG)
+//                    .show();
+//        }
+//        verses = db.getVerses(getIntent().getStringExtra("condition"));
+
+        verses = ((MyApplication)getApplication()).dbHelper.getVerses(getIntent().getStringExtra("condition"));
 
         getSupportActionBar().setTitle(getIntent().getStringExtra("title"));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
